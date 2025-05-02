@@ -1,0 +1,1 @@
+MQ3 har åbnet op for en API så man har adgang til kameraet og kan bruge androids Camera2 API

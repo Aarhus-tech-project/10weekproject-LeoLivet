@@ -1,6 +1,8 @@
 ---
 Priority: ""
 ---
+https://localjoost.github.io/
+Fyr der laver blog C# kode
 
 # Videoer
 ## Youtubere med AR/XR

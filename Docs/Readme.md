@@ -101,6 +101,6 @@ Microsoft HoloLens
 # Teknik
 
 ## Hurtig test af object detection fra hugging face
-Huggingface.co har et stort antal forskellige modeller man kan lege med. Her er et eksempel på hvor at jeg bare har lagt et billede fra mit køleskab op for at undersøge hvad der er tilgængeligt lige nu.![[Uden titel.png|300]]
+Huggingface.co har et stort antal forskellige modeller man kan lege med. Her er et eksempel på hvor at jeg bare har lagt et billede fra mit køleskab op for at undersøge hvad der er tilgængeligt lige nu.![[KøleskabMockup.png|300]]
 
 

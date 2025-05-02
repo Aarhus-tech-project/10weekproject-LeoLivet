@@ -1,7 +1,6 @@
----
-Priority: ""
----
 
+
+https://github.com/Aarhus-tech-project/10weekproject-LeoLivet
 # Intro
 Ideen er at kunne få lavet et form for HUD (**H**eads **U**p **D**isplay)  i et HMD (**H**ead **M**ounted **D**isplay).
 Som via Object recognition kigger igennem webcam på MQ3 og tilføjer det til en database.
