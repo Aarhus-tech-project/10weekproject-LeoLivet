@@ -27,7 +27,7 @@ namespace _00_Scripts
 					Color pixelDirt     = dirtBrush.GetPixel(x, y);
 					Color pixelDirtMask = paintMaskTexture2D.GetPixel(pixelXOffset + x, pixelYOffset + y);
 
-					float removedAmount = pixelDirtMask.g - (pixelDirtMask.g * pixelDirt.g);
+					float removedAmount = pixelDirtMask.a - (pixelDirtMask.g * pixelDirt.g);
 					dirtAmount -= (removedAmount * 10f);
 					//TODO magic number
 

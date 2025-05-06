@@ -18,20 +18,21 @@ public class SceneLayoutHandler : MonoBehaviour
 	private float              dirtAmountTotal;
 	private float              dirtAmount;
 
-	public float dirtLeftThreshold;
+	private float dirtLeftThreshold;
 
 	public RenderTexture OriginalRenderTexture;
 	public RenderTexture SceneLayoutFromRenderTexture;
 
 
-	public Texture2D texture2DBase;
-	public Texture2D paintMaskTexture2D;
+	public Texture2D    texture2DBase;
+	public Texture2D    paintMaskTexture2D;
+	public Texture2D    nofurnitureTexture2D;
 	
-	public OVRCameraRig  _cameraRig;
+	public OVRCameraRig _cameraRig;
 
 	private void Awake()
 	{
-		textureHelper.CopyRenderTextureToTexture2D(OriginalRenderTexture, texture2DBase);
+		textureHelper.CopyRenderTextureToTexture2D();
 
 		paintMaskTexture2D = new Texture2D(texture2DBase.width, texture2DBase.height);
 
@@ -79,6 +80,11 @@ public class SceneLayoutHandler : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			
+		}
+		
 		if (Input.GetMouseButton(0))
 		{
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit raycastHit))
