@@ -69,24 +69,57 @@ namespace _00_Scripts
 			RenderTexture.active = null;
 		}
 
-		public Texture2D RemoveFurnitureOutlines(Texture2D inputTexture)
+		public void RemoveFurnitureOutlines(Texture2D inputTexture)
 		{
 //			Overlay2DTextureNoFurnitureOutlines = Original2DTexture;
-
-			for (int i = 0; i < inputTexture.width; i++)
+			if (inputTexture == null)
 			{
-				for (int j = 0; j < inputTexture.height; j++)
-				{
-					if (inputTexture.GetPixel(i, j).b < 0.5)
-					{
-						inputTexture.SetPixel(i, j, TransparentColor);
-					}
-				}
+				Debug.Log("Texture is null");
+				return;
 			}
-			Overlay2DTextureNoFurnitureOutlines.Apply();
-			return Overlay2DTextureNoFurnitureOutlines;
+
+
+			//Array test
+
+			Color[] pixels = inputTexture.GetPixels(0, 0, inputTexture.width, inputTexture.height, 0);
+			for (int i = 0; i < pixels.Length; i++)
+			{
+				if (pixels[i].b < 0.5)
+				{
+					pixels[i] = TransparentColor;
+				}
+//				pixels[i] = BlueColorRemover(pixels[i]);
+			}
+
+			inputTexture.SetPixels(0, 0, inputTexture.width, inputTexture.height, pixels, 0);
+			inputTexture.Apply();
+
+
+// Not array
+//			for (int i = 0; i < inputTexture.width; i++)
+//			{
+//				for (int j = 0; j < inputTexture.height; j++)
+//				{
+//					
+//					if (inputTexture.GetPixel(i, j).b < 0.5)
+//					{
+//						inputTexture.SetPixel(i, j, TransparentColor);
+//					}
+//				}
+//			}
+//			Debug.Log("Furniture outlines removed");
+//			inputTexture.Apply();
+//			
 		}
 
+		public Color BlueColorRemover(Color color)
+		{
+			if (color.b > 0.5)
+			{
+				return new Color(0, 0, 0, 1);
+			}
+			else return color;
+		}
 	}
 
 }
